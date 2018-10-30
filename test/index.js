@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import fetch from '../src';
+import Websocket from '../src';
 
 // describe('Awesome test.', () => {
 //   it('should test default awesome function', () => {
