@@ -14,7 +14,6 @@ const EVENTS = [
 
 class WebSocket extends EventTarget(EVENTS) {
   constructor(url, protocol) {
-    console.log(url, protocol)
     if (!url) {
       throw new TypeError('Failed to construct \'WebSocket\': url required');
     }
@@ -41,7 +40,7 @@ class WebSocket extends EventTarget(EVENTS) {
     });
     this._socketTask = socketTask;
 
-    socketTask.onOpen((event) => {
+    socketTask.onOpen(() => {
       this._readyState = OPEN;
       this.dispatchEvent({
         type: 'open'
@@ -92,7 +91,7 @@ class WebSocket extends EventTarget(EVENTS) {
   close() {
     if (this.readyState === CLOSED) return;
     if (this.readyState === CONNECTING) {
-      console.warn('close WebSocket which is connecting might not work');
+      // console.warn('close WebSocket which is connecting might not work');
     }
     this._socketTask.close();
   }
