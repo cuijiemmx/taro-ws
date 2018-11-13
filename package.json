@@ -1,12 +1,12 @@
 {
   "name": "taro-ws",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a websocket ponyfill for tarojs",
   "main": "./lib/bundle.js",
   "module": "./src/index.js",
   "scripts": {
     "clean": "rimraf lib",
-    "build": "cross-env BABEL_ENV=production rollup -c",
+    "build": "rollup -c",
     "prepublish": "npm run clean && npm run build"
   },
   "files": [
@@ -33,8 +33,6 @@
   "devDependencies": {
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
-    "chai": "^4.1.2",
-    "cross-env": "^5.1.3",
     "rimraf": "^2.6.2",
     "rollup": "^0.67.1",
     "rollup-plugin-babel": "^4.0.3"
